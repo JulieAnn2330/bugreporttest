@@ -1,0 +1,14 @@
+<%= form_with(model: bug) do |form| %>
+
+<div class="field mb-3">
+    <%= form.label :number_of_reports %>
+    <%= form.select :number_of_reports, ["1", "2", "3", "4"] %>
+  </div>
+     
+     <div class="actions">
+    <%= form.submit class:"btn btn-warning mt-3" %>
+  </div>
+
+<% end %>
+
+ 

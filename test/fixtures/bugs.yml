@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  report_timestamp: 2021-10-30 15:23:50
+  title_of_bug_report: MyString
+  reported_by: MyString
+  hardware: MyString
+  browser: MyString
+  description_of_issue: MyText
+  reproducible: MyString
+  severity: MyString
+  priority: MyString
+  qa_team_member: MyString
+  number_of_reports: 1
+  referred_to: MyString
+
+two:
+  report_timestamp: 2021-10-30 15:23:50
+  title_of_bug_report: MyString
+  reported_by: MyString
+  hardware: MyString
+  browser: MyString
+  description_of_issue: MyText
+  reproducible: MyString
+  severity: MyString
+  priority: MyString
+  qa_team_member: MyString
+  number_of_reports: 1
+  referred_to: MyString

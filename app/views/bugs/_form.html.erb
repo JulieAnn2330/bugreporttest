@@ -1,0 +1,97 @@
+<%= form_with(model: bug) do |form| %>
+  <% if bug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+        <% bug.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :status %>
+    <%= form.select :bug_status, ["Assign Status", "Open", "In Process", "Closed"] %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :assigned_QA_team_member %>
+    <%= form.select :qa_team_member, ["Assign Team Member", "Eve - QA", "Hernan - QA", "Julie - QA", "Majo - QA", "Pedro - QA" ] %>
+    </div>
+
+    <div class="field mb-3">
+    <%= form.label :assigned_Product_team_member %>
+    <%= form.select :product_team_member, ["Assign Team Member", "Not Needed", "Aris - Inspections", "Ben - Sell Side", "Casey - Buy Side", "David - BuySide/SellSide"  "Erin - Finance", "Ethan - Front End", "Jason K. - Finance", "Nick - Transport", "Maxi - Finance", "PPerone - Finance", "Other"  ] %>
+    </div>
+
+  <div class="field mb-3">
+  <%= form.label :reported_by %>
+    <%= form.text_field :reporter_email, class:"form-control", value: current_user.email %>
+  </div>
+
+   <div class="field mb-3">
+    <%= form.label :area %>
+    <%= form.select :area_interface, ["Assign Area", "BossSite", "Buyer App - iOS", "Multiple Platforms - BossSite, Buyer App, Web App", "Seller App - iOS", "Web App - Buy Side", "Web App - User Facing"] %>
+  </div>
+
+ <div class="field mb-3">
+    <%= form.label :summary_of_issue %>
+    <%= form.text_area :description_of_issue, class:"form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :how_to_reproduce %>
+    <%= form.text_area :reproducible, class:"form-control" %>
+  </div>
+ 
+   <div class="field mb-3">
+    <%= form.label :URL %>
+    <%= form.text_field :website_url, class:"form-control" %>
+  </div>
+
+   <div class="field mb-3">
+    <%= form.label :user_ID %>
+    <%= form.text_field :customer, class:"form-control" %>
+  </div>
+
+    <div class="field mb-3">
+    <%= form.label :transaction_ID %>
+    <%= form.text_field :transaction_id, class:"form-control" %>
+  </div>
+
+    <div class="field mb-3">
+    <%= form.label :vehicle_ID %>
+    <%= form.text_field :vehicle_id, class:"form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :user_id, id: :bug_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+ <div class="form-group">
+ <% if @bug.image.attached? %>
+    <%= image_tag @bug.image.variant(resize_to_limit: [750, 750]) %>
+    <% end %>
+    <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg', class:"form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :severity %>
+    <%= form.select :severity, ["Assign Severity", "Critical: Appliction crash, loss of data", "Blocked: No work can be done", "Major: Major loss of function", "Minor: Minor loss of function", "Trivial: Some visual design enhancements", "Enhancement: Request for new feature or enhancement" ] %>
+  </div>
+
+    <div class="field mb-3">
+    <%= form.label :resolution %>
+    <%= form.text_area :resolution, class:"form-control" %>
+  </div>
+
+   <div class="field mb-3">
+    <%= form.number_field :number_of_reports, value: 1, type: :hidden %>
+  </div>
+
+ <div class="actions">
+    <%= form.submit class:"btn btn-warning mt-3" %>
+  </div>
+<% end %>

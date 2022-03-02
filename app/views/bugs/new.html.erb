@@ -1,0 +1,15 @@
+<!-- This page controls the text showing on the Add A Friend Page, the form in on _form.html.erb -->
+
+<div class="card">
+  <div class="card-header">
+    <h1>Add A New Bug</h1>
+  </div>
+  <div class="card-body">
+<%= render 'form', bug: @bug %>
+
+<%= link_to 'Home', bugs_path, class:"btn btn-warning mt-3" %>
+  </div>
+</div>
+
+
+<br>

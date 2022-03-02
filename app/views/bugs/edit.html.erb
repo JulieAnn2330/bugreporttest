@@ -1,0 +1,7 @@
+<h1>Edit the Bug</h1>
+<br>
+<%= render 'form', bug: @bug %>
+
+<%= link_to 'Show', @bug, class:"btn btn-warning mt-3" %>
+<%= link_to 'Delete', @bug, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger mt-3" %>
+<%= link_to 'Back', bugs_path, class:'btn btn-warning mt-3' %>

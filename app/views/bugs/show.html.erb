@@ -1,0 +1,83 @@
+<div class = "jumbotron bg-light">
+  <h3 class="display-4">
+
+<%= @bug.title_of_bug_report %><h3>
+
+<p class=lead>
+<strong>Bug Status:</strong>
+  <%= @bug.bug_status %> |
+  <strong>Reported By:</strong>
+  <%= @bug.reporter_email %> |
+  <strong>Area:</strong>
+  <%= @bug.area_interface %> |
+  <strong>Severity:</strong>
+  <%= @bug.severity %>
+</p>
+
+<h5 >
+  <strong>Assigned QA Team Member:</strong>
+  <%= @bug.qa_team_member %>
+</h5>
+
+<h5 >
+  <strong>Assigned Product Team Member:</strong>
+  <%= @bug.product_team_member %>
+</h5>
+
+<p>
+  <strong>Summary of Issue:</strong>
+  <%= @bug.description_of_issue %>
+</p>
+
+<p>
+  <strong>How to Reproduce:</strong>
+  <%= @bug.reproducible %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @bug.website_url %>
+</p>
+
+
+
+<p>
+  <strong>User ID</strong>
+  <%= @bug.customer %>
+</p>
+
+<p>
+  <strong>Transaction ID</strong>
+  <%= @bug.transaction_id %>
+</p>
+
+<p>
+  <strong>Vehicle ID</strong>
+  <%= @bug.vehicle_id %>
+</p>
+
+<p>
+  <strong>Number of Reports:</strong>
+  <%= @bug.number_of_reports %>
+</p>
+
+<p>
+<strong>Screenshots:</strong>
+<% if @bug.image.attached? %>
+  <%= image_tag @bug.image.variant(resize: "750x750") %>
+<% end %>
+</p>
+
+
+<p>
+  <strong>Resolution:</strong>
+  <%= @bug.resolution %>
+</p>
+<br>
+
+  <%= link_to 'Edit', edit_bug_path(@bug), class:"btn btn-warning mb-3" %>
+  <%= link_to 'Home', bugs_path, class:"btn btn-warning mb-3" %>
+  <br>
+  <%= link_to 'Delete', @edit_bug_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> 
+
+</div>

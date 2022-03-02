@@ -1,0 +1,14 @@
+{
+  "application.js": "/packs/js/application-deb7961cb1b5431d418c.js",
+  "application.js.map": "/packs/js/application-deb7961cb1b5431d418c.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-deb7961cb1b5431d418c.js"
+      ],
+      "js.map": [
+        "/packs/js/application-deb7961cb1b5431d418c.js.map"
+      ]
+    }
+  }
+}
